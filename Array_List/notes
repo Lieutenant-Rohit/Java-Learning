@@ -1,0 +1,83 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main
+{
+    public static void main(String[] args)
+    {
+        ArrayList <Integer> list = new ArrayList<>(); //Declaration. Default capacity of list is 10.
+
+        //Adding elements to the list.
+        list.add(1);
+        list.add(2);
+        list.add(5);
+        list.add(4);
+        list.add(3);
+        System.out.println(list);
+
+        //Removing element at index 2
+        list.remove(2);
+        System.out.println(list);
+
+        //Replace element at index 2 with 9.
+        list.set(2,9);
+        System.out.println(list);
+
+        //Inserting element at index 2 and previous element with shift.
+        list.add(2,0);
+        System.out.println(list);
+
+        //print
+        for(int x : list)
+        {
+            System.out.print(x);
+        }
+
+        //check if element is present in the list. Returns true if the element is present.
+        System.out.println("\n"+list.contains(1));
+
+        //Sort Element
+        Collections.sort(list);
+        System.out.println(list);
+
+        //We initialise the capacity to 5 at first, but it dynamically changes the capacity by 1.5 growth factor.
+        ArrayList <Integer> list1 = new ArrayList<>(5);
+        list1.add(1);
+        list1.add(1);
+        list1.add(1);
+        list1.add(1);
+        list1.add(1);
+        list1.add(1);
+        list1.add(1);
+        System.out.println(list1);
+        System.out.println(list1.getClass().getName());
+
+        //Different ways to create list.
+        // AsList Method. Returns fixed sized list.
+        List<String> list3 = Arrays.asList("Monday","Tuesday","Wednesday");
+        System.out.println(list3.getClass().getName());
+        //list3.add("Thrusday");   We can't add elements in the list created via asList method().
+        list3.set(1,"Sunday"); // We can only replace element through this.
+        System.out.println(list3);
+
+        //List of method
+        List<Integer> list4 = List.of(1,2,3,4); //Unmodifiable list, not even replace is allowed.
+        //list4.add(5);  shows exception Unsupported Operation.
+        System.out.println(list4);
+
+        //Add a collection of list.
+        list.addAll(list1);
+        System.out.println(list);
+
+      //  Convert LIST TO ARRAY
+       Integer[] array = list.toArray(new Integer[0]);
+        System.out.println("This is Array: " +Arrays.toString(array));
+
+
+
+
+
+    }
+}
