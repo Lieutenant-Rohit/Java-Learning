@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+class MyComparatorAscending implements Comparator<Integer>
+{
+    @Override
+    //if this method return negative then o1 phle aayega o2 se.
+    //if it return positive then o2 phle aayega o1 se.
+    public int compare(Integer o1, Integer o2) {
+        return o1-o2;
+    }
+
+}
+
+class MyComparatorDescending implements Comparator<Integer>
+{
+    @Override
+    public int compare(Integer o1, Integer o2) {
+        return o2-o1;
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> list = new ArrayList<>();
+//        list.add(2);
+//        list.add(4);
+//        list.add(1);
+//        list.add(3);
+
+        list.add(5);
+        list.add(3);
+
+        //SORT List in ascending order.
+        Collections.sort(list);
+        System.out.println(list);
+
+        //Sort list in ascending order.
+        list.sort(null);
+        System.out.println(list);
+
+        List<Integer> list1= new ArrayList<>();
+        list1.add(2);
+        list1.add(4);
+        //To sort in descending order or sort according to any custom logic, we will use comparator.
+        //ascending order (among 5-->o1 and 3-->o2) 3(o2) phle anna chayie. And o2 phle tav aata h jav compare funtion returns positive and postive return tav hoga jav o1-o2 krege.
+        //For eg if (o1-->2 and o2-->4 ) 2(o1) phle aana chayie. And o1 phle tav aata h jav function returns negative. Negative kav return hoga jav hum o1-o2  krege.
+        list.sort(new MyComparatorAscending());
+        list1.sort(new MyComparatorAscending());
+        System.out.println("Ascending Order: "+list);
+        System.out.println("Ascending Order: "+list1);
+
+        //descending order (among 5-->o1 and 3 -->o2), 5(o1) phle aana chayie, and o1 phle tav atta h jav function retruns negative. Negavtive kav return hoga jav o2 -o1 krege.
+        //For eg if (o1-->2 and o2-->4 ) 4(o2) phle aana chayie, And o2 phle tav aata h jav function return postive and positve kav return hoga jav o2-o1 krege
+        list.sort(new MyComparatorDescending());
+        list1.sort(new MyComparatorDescending());
+        System.out.println("Descending Order: "+list);
+        System.out.println("Descending Order: "+list1);
+
+        //Use Lamda Expression
+        List<String> list3= new ArrayList<>();
+        list3.add("India");
+        list3.add("United States");
+        list3.add("Australia");
+        list3.sort((a,b)->a.length()-b.length());
+        System.out.println("Ascending Order: "+list3);
+
+        list3.sort((a,b)->b.length()-a.length());
+        System.out.println("Descending Order: "+list3);
+
+    }
+}
