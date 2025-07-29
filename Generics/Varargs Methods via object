@@ -1,0 +1,40 @@
+class Student{
+    private String name;
+    private int age;
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                '}';
+    }
+}
+
+
+class Main{
+    public static void main(String[] args) {
+
+        Student m1 = new Student("John Doe", 20);
+        // Using the print method to print different types of arguments
+        print(m1);
+        print(1,2,3.5,"Java is Fun!");
+        print(1,2);
+
+    }
+
+    //Using varargs to accept multiple arguments of different types
+
+    public static void print(Object ... o)
+    {
+        for (Object obj : o) {
+            System.out.println(obj);
+        }
+        System.out.println("-----------------");
+    }
+}
