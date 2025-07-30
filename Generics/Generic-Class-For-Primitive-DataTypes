@@ -1,0 +1,25 @@
+public class Generic<T> {
+    private T value;
+
+    public Generic(T value) {
+        this.value = value;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public static void main(String[] args) {
+
+
+        Generic<String> stringGeneric = new Generic<>("Hello, World!"); //Values are passed as Objects
+        System.out.println("String Value: " + stringGeneric.getValue());
+
+        Generic<Integer> integerGeneric = new Generic<>(42);
+        System.out.println("Integer Value: " + integerGeneric.getValue());
+    }   
+}
