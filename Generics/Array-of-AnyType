@@ -1,0 +1,21 @@
+public class GenericArrayExample<T> {
+
+    private T[] array;
+    
+    public GenericArrayExample(T [] array) {
+        this.array = array;
+    }
+    public void printArray() {
+        for (T element : array) {
+            System.out.print(element + " ");
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Create an array of type String
+        String[] stringArray = {"Hello", "World", "Generics"};
+        GenericArrayExample<String> stringExample = new GenericArrayExample<>(stringArray);
+        stringExample.printArray();
+    }
+}
