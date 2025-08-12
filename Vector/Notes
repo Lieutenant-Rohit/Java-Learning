@@ -1,0 +1,45 @@
+/*The Vector class in Java is a part of the Java Collection Framework and
+represents a resizable array that is synchronized. */
+
+//Key Features of `Vector`
+/*
+1-->Automatically grows when more elements are added.
+2-->Thread-safe for concurrent access (unlike ArrayList).
+3-->Supports fast random access via index (get(int index)).
+ */
+
+/*
+VECTOR                                                      ARRAYLIST
+Synchronized (thread-safe)                                  Not synchronized
+Slower due to synchronization                               Faster in single-threaded use
+Growth rate - Doubles in size when full                     Grows by 50% when full
+ */
+
+import java.util.Vector;
+
+class Main
+{
+    public static void main(String[] args) {
+
+        Vector<String> vector = new Vector<>();
+        //ADDING ELEMENT;
+        vector.add("Apple");
+        vector.add("Banana");
+        vector.add("Mango");
+        vector.add("Strawberry");
+        vector.add("Watermelon");
+        System.out.println(vector);
+
+        //REMOVING ELEMENTS.
+        vector.remove("Apple");
+        System.out.println(vector);
+
+        //Accessing elements.
+        System.out.println(vector.get(2));
+
+        vector.clear();
+        System.out.println(vector);
+
+
+    }
+}
