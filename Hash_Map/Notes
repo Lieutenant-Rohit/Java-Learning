@@ -13,6 +13,14 @@ Why Use Map!...
 
 //HashMap is not synchronized.
 
+/* Basic Components of HashMap
+1-> Key - The identifier used to retrieve the value
+2-> Value - The data associated with the value.
+3-> Bucket - A place where key-value pairs are stored. Think of buckets as cells in a list (Array of linked list, but after java8 , it started using balanced binary search tree ).
+4-> HashFunction - Convert a key into an index for storage.
+ */
+
+/*
 import java.util.HashMap;
 import java.util.Map;
 
@@ -49,6 +57,58 @@ class Main
         System.out.println("Remove: "+map.remove(2));
 
 
+
+    }
+}*/
+
+import java.util.HashMap;
+
+class Student {
+    String name;
+    int id;
+    public Student(){}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args) {
+        Student s1 = new Student();
+        s1.setName("Alex");
+        s1.setId(12);
+
+        Student s2 = new Student();
+        s2.setName("John");
+        s2.setId(1);
+
+        HashMap<Student , String> map = new HashMap<>();
+        map.put(s1,"Computer Science");
+        map.put(s2,"Mechanical");
+        map.put(s1,"Design");
+        System.out.println(map);
 
     }
 }
