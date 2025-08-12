@@ -1,0 +1,54 @@
+/*
+A Map in Java is a powerful data structure used to store key-value pairs, where each key maps to exactly one value.
+It’s perfect for fast lookups, organizing data by identifiers, and modeling relationships.
+ */
+
+/*
+Why Use Map!...
+• Fast retrieval: O(1) access time with HashMap
+• Organized data: Easy to model relationships (e.g., user → books)(book id -> book)etc.
+• Avoids duplication: Keys are unique, preventing redundant entries
+• Flexible: Can store complex objects as values (like Book, User, etc.)
+ */
+
+//HashMap is not synchronized.
+
+import java.util.HashMap;
+import java.util.Map;
+
+class Main
+{
+    public static void main(String[] args) {
+        HashMap<Integer,String> map = new HashMap<>();
+        //Add elements.
+        map.put(1,"Alex");
+        map.put(2,"John");
+        map.put(3,"Shawn");
+        map.put(4,"George");
+        map.put(6,"Mason");
+
+        //Accessing value using key.
+        System.out.println(map);
+        System.out.println(map.get(3));
+
+        //Check if key or value is present or not
+        System.out.println(map.containsKey(2));
+        System.out.println(map.containsValue("Shawn"));
+
+        //Run a loop
+        for(int x : map.keySet())
+        {
+            System.out.println(map.get(x));
+        }
+
+        for (Map.Entry<Integer, String> integerStringEntry : map.entrySet()) {
+            System.out.println(integerStringEntry.getKey()+":"+integerStringEntry.getValue());
+        }
+
+        //Remove element.
+        System.out.println("Remove: "+map.remove(2));
+
+
+
+    }
+}
