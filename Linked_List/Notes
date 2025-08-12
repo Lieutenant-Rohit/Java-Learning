@@ -1,0 +1,54 @@
+/*A linked list is a fundamental data structure used in computer science to organize items sequentially. Unlike arrays,
+linked lists don’t store elements in contiguous memory locations—instead, each element (called a node) contains:
+  Data: the actual value or payload.
+  Pointer (or reference): a link to the next node in the sequence. */
+
+//WHY USE LINKED LIST??
+/* Dynamic size: You can easily add/remove elements without resizing.
+Efficient insertions/deletions: Especially in the middle or beginning.
+No memory wastage: Unlike arrays, you don’t need to predefine size.
+*/
+
+/*Disadvantage
+1--> Slower access: You can’t directly access an element by index (need to traverse).
+2-->Extra memory: Each node stores a pointer, which adds overhead.
+ */
+
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Main{
+    public static <Array> void main(String[] args) {
+
+        LinkedList<Integer> linkedList = new LinkedList();
+
+        //ADD an element in a linked list.
+        linkedList.add(5);
+        linkedList.add(6);
+        linkedList.add(7);
+        linkedList.add(1);
+        linkedList.add(3);
+        linkedList.add(9);
+
+        System.out.println(linkedList);
+
+        //Remove From a Linked list.
+        linkedList.remove(1);
+        System.out.println(linkedList);
+
+        //Accessing elements using get.
+        System.out.println(linkedList.getFirst());
+        System.out.println(linkedList.get(4));
+
+        //Convert a linked list to array.
+       List<Integer> list = new ArrayList<>(linkedList);
+       System.out.println(list);
+
+    }
+
+}
+
+
+
